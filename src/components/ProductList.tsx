@@ -1,6 +1,6 @@
+import store from '../store';
 import { useCallback } from 'react';
 import { observer } from 'mobx-react';
-import store from '../store';
 import { Product } from './Product';
 import { Modal } from './Modal';
 import { ProductDetail } from './ProductDetail';
@@ -20,13 +20,17 @@ function ProductList() {
 
   return (
     <>
-      <i>There are { productCount } products.</i>
+      <i>Showing { productCount } { productCount === 1 ? 'product' : 'products' }.</i>
       {selectedProduct && 
         <Modal open onClose={onCloseDetail}>
           <ProductDetail product={selectedProduct} />
         </Modal>
       }
-      {products.map(product => <Product key={product.id} product={product} onSelect={setSelectedProductId} />)}
+      {products.map(product => <Product
+        key={product.id}
+        product={product}
+        onSelect={setSelectedProductId}
+      />)}
     </>
   )
 }

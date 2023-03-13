@@ -1,12 +1,12 @@
-import './App.css'
 import ProductList from './components/ProductList';
+import styles from './App.module.css';
 
 function App() {
   return (
     <>
-      <div className="app">
+      <div className={styles.app}>
         <h1>Fake Store LLC</h1>
-          <ProductList />
+        <ProductList />
       </div>
     </>
   )

@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
+import styles from './Modal.module.css';
 
 export interface ModalProps {
   children: JSX.Element,
@@ -8,7 +9,7 @@ export interface ModalProps {
 };
 
 export const Modal: React.FC<ModalProps> = ({ children, open, onClose }) => {
-  const modalRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDialogElement>(null);
 
   useEffect(
     () => {
@@ -28,21 +29,15 @@ export const Modal: React.FC<ModalProps> = ({ children, open, onClose }) => {
         document.removeEventListener("mousedown", listener);
         document.removeEventListener("touchstart", listener);
       };
-    },
-    // Add ref and handler to effect dependencies
-    // It's worth noting that because passed in handler is a new ...
-    // ... function on every render that will cause this effect ...
-    // ... callback/cleanup to run every render. It's not a big deal ...
-    // ... but to optimize you can wrap handler in useCallback before ...
-    // ... passing it into this hook.
+    },   
     [modalRef, onClose]
   );
 
   if (!open) return null;
 
   return createPortal(
-    <div ref={modalRef} className="modal">
+    <dialog open ref={modalRef} className={styles.modal}>
       { children }
-    </div>, document.querySelector('body')!
+    </dialog>, document.querySelector('body')!
   );
 }

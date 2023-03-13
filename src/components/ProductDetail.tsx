@@ -1,9 +1,12 @@
 import { ProductType } from '../types';
+import styles from './ProductDetail.module.css';
 
-interface Props {
+interface ProductDetailProps {
   product: ProductType
 }
 
-export const ProductDetail = ({ product }: Props) => (
-  <h4>{ product.description }</h4>
+export const ProductDetail = ({ product }: ProductDetailProps) => (
+  <div className={styles.productDetail}>
+    <h4>{ product.description }</h4>
+  </div>
 );
