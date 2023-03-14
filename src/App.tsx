@@ -5,8 +5,14 @@ function App() {
   return (
     <>
       <div className={styles.app}>
-        <h1>Fake Store LLC</h1>
+        <header>
+          <nav>
+            <h1 className={styles.logo}>FAKE STORE LLC</h1>
+          </nav>
+        </header>
         <ProductList />
+        <footer>
+        </footer>
       </div>
     </>
   )

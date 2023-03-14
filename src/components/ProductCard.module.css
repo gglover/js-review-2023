@@ -1,0 +1,23 @@
+.card {
+  box-shadow: var(--soft-shadow);
+  padding: var(--half-padding);
+  height: 350px;
+  cursor: pointer;
+  transition: transform 300ms ease;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.card > div {
+  background: center / contain no-repeat;
+  flex-grow: 1;
+}
+
+.card h5 {
+  margin-bottom: 0;
+}
+
+.card:hover {
+  transform: scale(1.015);
+}

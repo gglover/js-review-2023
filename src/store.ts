@@ -41,7 +41,7 @@ class ProductStore {
 
 const store = new ProductStore();
 
-fetch('https://fakestoreapi.com/products?limit=8')
+fetch('https://fakestoreapi.com/products?limit=12')
   .then(res => res.json())
   .then((products: ProductType[]) => store.setProducts(products));
 
