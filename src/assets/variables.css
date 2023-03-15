@@ -1,7 +1,20 @@
 :root {
+  --background-color: hsl(0, 0%, 100%);
+  --text-color: hsl(208, 37%, 20%);
+  --shadow-color: hsl(0, 0%, 97%);
+  --link-color: hsl(237, 100%, 70%);
+  --link-hover-color: hsl(237, 100%, 65%);
+
+  --soft-shadow: 0px 2px 20px var(--shadow-color);
+  --hard-shadow: 0px 1px 5px var(--shadow-color);
+
   --padding: 1.5rem;
   --half-padding: calc(var(--padding) / 2);
   --quarter-padding: calc(var(--padding) / 4);
-  --soft-shadow: 0px 2px 20px #f6f6f6;
-  
+
+  --timing-normal: 300ms;
+  --timing-fast: 250ms;
+
+  --header-height: 70px;
+  --button-height: 50px;
 }

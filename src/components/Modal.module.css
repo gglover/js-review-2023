@@ -3,10 +3,16 @@
   min-width: min(95vw, 1000px);
   width: 80vw;
   height: 80vh;
-  margin: 10vh auto;
-  top: 0;
+  top: calc(var(--header-height) + var(--padding));
   left: 0;
-  padding: var(--half-padding);
-
+  padding: var(--padding);
+  
+  box-shadow: var(--soft-shadow);
   border: none;
+}
+
+.button {
+  position: absolute;
+  top: var(--half-padding);
+  right: var(--half-padding);
 }

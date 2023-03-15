@@ -1,17 +1,24 @@
-.app {
-  max-width: 1600px;
-  margin: 0 auto;
-  
-}
-
 .logo {
   margin: 0;
   font-size: small;
+  flex-grow: 1;
 }
 
 header {
-  /* border-bottom: 1px solid black; */
-  padding: var(--padding);
-  box-shadow: var(--soft-shadow);
+  padding: 0 var(--padding);
+  box-shadow: var(--hard-shadow);
+  height: var(--header-height);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--background-color);
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
 }
 

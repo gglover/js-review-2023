@@ -1,19 +1,22 @@
 import ProductList from './components/ProductList';
+import Button from './components/Button';
+import Bag from './components/icons/Bag';
 import styles from './App.module.css';
 
 function App() {
   return (
     <>
-      <div className={styles.app}>
-        <header>
-          <nav>
-            <h1 className={styles.logo}>FAKE STORE LLC</h1>
-          </nav>
-        </header>
-        <ProductList />
-        <footer>
-        </footer>
-      </div>
+      <header>
+        <nav>
+          <h1 className={styles.logo}>FAKE STORE LLC</h1>
+          <Button circular icon={<Bag/>}></Button>
+        </nav>
+      </header>
+
+      <ProductList />
+
+      <footer>
+      </footer>
     </>
   )
 }

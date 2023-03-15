@@ -1,3 +1,19 @@
-.productDetail {
-  background-color: antiquewhite;
+.panel {
+  display: flex;
+  height: 100%;
+}
+
+@media (max-width: 800px) {
+  .panel {
+    flex-direction: column;
+  }
+}
+
+.image {
+  composes: centeredBackground from '@/assets/utils.module.css';
+}
+
+.image, .detail {
+  flex: 1;
+  margin: var(--half-padding);
 }

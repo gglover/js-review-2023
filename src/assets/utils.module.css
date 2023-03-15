@@ -1,0 +1,38 @@
+/*
+  Utility classes that should be applied via `composes` in component-specific CSS modules.
+*/
+
+.hoverScale {
+  transition: transform var(--timing-normal) ease;
+}
+
+.hoverScale:hover {
+  transform: scale(1.015);
+}
+
+.slideFade {
+  transition-property: transform, opacity;
+  transition-duration: var(--timing-fast);
+  transition-timing-function: ease;
+  opacity: 0;
+  transform: translate(0, var(--half-padding));
+}
+
+.slideFadeEnabled {
+  opacity: 1;
+  transform: none;
+}
+
+.blurOverlay {
+  transition: filter var(--timing-fast) ease;
+  filter: blur(0px);
+}
+
+.blurOverlayEnabled {
+  filter: blur(3px);
+  pointer-events: none;
+}
+
+.centeredBackground {
+  background: center / contain no-repeat;
+}

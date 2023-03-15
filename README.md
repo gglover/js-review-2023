@@ -6,11 +6,20 @@ land on a format with the potential to scale.
 
 ### Tech to learn
 - React Query
-- React Transition Group
+- React Transition Groups
 - Vite
 - Tighter Typescript configuration
 - CSS modules
-- Better CSS variable usage
+- Better CSS variable usage and style sharing
 
 ### Some ideas borrowed from 
 - https://github.com/vercel/commerce
+- https://andreipfeiffer.dev/blog/2022/scalable-css-evolution/
+
+
+### TODO
+- Search bar
+- Categories
+- Sorting
+- Add to card / cart
+- PDP

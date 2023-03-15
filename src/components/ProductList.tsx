@@ -1,5 +1,7 @@
 import store from '../store';
 import styles from './ProductList.module.css';
+import utilStyles from '../assets/utils.module.css';
+import cn from 'clsx';
 import { useCallback } from 'react';
 import { observer } from 'mobx-react';
 import { ProductCard } from './ProductCard';
@@ -7,6 +9,22 @@ import { Modal } from './Modal';
 import { ProductDetail } from './ProductDetail';
 
 const Loading = () => <h3>Loading...</h3>;
+
+interface ResultsProps {
+  count: number,
+  query?: string
+}
+
+const ResultsText = ({count, query}: ResultsProps) => {
+  let resultsText;
+  if (count) {
+    resultsText = `Showing results for ${ count } ${ count === 1 ? 'product' : 'products' }.`
+  } else {
+    resultsText = "No results found."
+  }
+
+  return <i>{ resultsText }</i>
+}
 
 function ProductList() {
   const { products, selectedProduct, productCount, setSelectedProductId } = store;
@@ -20,18 +38,16 @@ function ProductList() {
   }
 
   return (
-    <div className={styles.list}>
-      <i>Showing results for { productCount } { productCount === 1 ? 'product' : 'products' }.</i>
-      {selectedProduct && 
-        <Modal open onClose={onCloseDetail}>
-          <ProductDetail product={selectedProduct} />
-        </Modal>
-      }
+    <div className={cn(styles.list, utilStyles.blurOverlay, { [utilStyles.blurOverlayEnabled]: selectedProduct })}>
+      <ResultsText count={productCount} />
+      <Modal open={!!selectedProduct} onClose={onCloseDetail}>
+        {selectedProduct && <ProductDetail product={selectedProduct} />}
+      </Modal>
       <div className={styles.results}>
         {products.map(product => <ProductCard
           key={product.id}
           product={product}
-          onSelect={setSelectedProductId}
+          onClick={setSelectedProductId}
           />)}
       </div>
     </div>
