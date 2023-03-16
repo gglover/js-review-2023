@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 import { CSSTransition } from 'react-transition-group';
 
 import Button from './Button';
-import X from './icons/X';
+import { X } from './icons';
 
 import styles from './Modal.module.css';
 import utilStyles from '../assets/utils.module.css';
@@ -60,7 +60,7 @@ export const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
     >
       <dialog open={open} ref={modalRef} className={cn(styles.modal, utilStyles.slideFade)}>
         <Button
-          classes={styles.button}
+          className={styles.button}
           circular
           icon={<X/>}
           onClick={ () => { setTransitionIn(false); } }

@@ -1,6 +1,6 @@
 import ProductList from './components/ProductList';
 import Button from './components/Button';
-import Bag from './components/icons/Bag';
+import { Bag } from './components/icons';
 import styles from './App.module.css';
 
 function App() {

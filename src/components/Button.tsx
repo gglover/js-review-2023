@@ -3,17 +3,31 @@ import styles from './Button.module.css';
 
 export interface ButtonProps {
   icon?: JSX.Element,
+  style?: React.CSSProperties,
   text?: string,
   circular?: boolean,
-  style?: React.CSSProperties,
-  classes?: string
+  className?: string
   onClick?: () => void
 }
 
-export default function Button({ icon, text, circular, classes, style, onClick }: ButtonProps) {
+ const Button: React.FC<ButtonProps> = ({
+  icon,
+  text,
+  className,
+  style,
+  circular = false,
+  onClick
+}) => {
   return (
-    <button onClick={onClick} style={style} className={cn(styles.button, { [styles.circular]: circular }, classes)}>
+    <button
+      onClick={onClick}
+      style={style}
+      className={cn(styles.button, { [styles.circular]: circular }, className)}
+    >
       { icon ?? icon }
+      { text ?? text }
     </button>
   );
 }
+
+export default Button;

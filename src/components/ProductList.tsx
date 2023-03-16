@@ -4,9 +4,9 @@ import utilStyles from '../assets/utils.module.css';
 import cn from 'clsx';
 import { useCallback } from 'react';
 import { observer } from 'mobx-react';
-import { ProductCard } from './ProductCard';
 import { Modal } from './Modal';
-import { ProductDetail } from './ProductDetail';
+import ProductDetail from './ProductDetail';
+import ProductCard from './ProductCard';
 
 const Loading = () => <h3>Loading...</h3>;
 

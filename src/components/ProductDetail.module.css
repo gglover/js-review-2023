@@ -1,6 +1,7 @@
 .panel {
   display: flex;
   height: 100%;
+  gap: var(--padding);
 }
 
 @media (max-width: 800px) {
@@ -15,5 +16,4 @@
 
 .image, .detail {
   flex: 1;
-  margin: var(--half-padding);
 }

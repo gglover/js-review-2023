@@ -13,7 +13,6 @@ land on a format with the potential to scale.
 - Better CSS variable usage and style sharing
 
 ### Some ideas borrowed from 
-- https://github.com/vercel/commerce
 - https://andreipfeiffer.dev/blog/2022/scalable-css-evolution/
 
 
